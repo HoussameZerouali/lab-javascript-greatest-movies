@@ -5,12 +5,16 @@
 // _Bonus_: It seems some of the directors had directed multiple movies so they will pop up multiple times in the array of directors.
 // How could you "clean" a bit this array and make it unified (without duplicates)?
 
-function getAllDirectors(myArray) {
-  let directorArray = []
-  myArray.forEach(element => {
-    directorArray.push([element.director])  
-  });
-  return directorArray;
+function getAllDirectors(myArray){
+  const directorsArray = myArray.map(function (myArray) {
+    return myArray.director
+    
+  }
+
+  )
+  
+  return directorsArray;
+  
 }
 
 
