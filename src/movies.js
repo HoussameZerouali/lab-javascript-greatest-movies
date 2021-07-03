@@ -21,14 +21,35 @@ function getAllDirectors(myArray){
 
 
 function howManyMovies (myArray){
-  filteredArray = myArray.filter(movie =>{
+  const filteredArray = myArray.filter(movie =>{
     return movie.director === "Steven Spielberg" && movie.genre.indexOf("Drama") != -1;
   })
   return filteredArray.length;
 }
 
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
-function scoresAverage() {}
+function scoresAverage(myArray) {
+  
+  const scoreArray = myArray.map(movie =>{
+    return movie.score
+  }) 
+  const filteredScore = scoreArray.filter(element =>{
+    if (typeof(element) === "number"){
+      return element
+    }
+  })
+  const sum = filteredScore.reduce((acc,currentValue) => {
+    return acc + currentValue
+  },0)
+  if(sum === 0){
+    return sum
+  }else{
+    return Math.round((sum/scoreArray.length) * 100) / 100
+  }
+  
+  
+ 
+}
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
 function dramaMoviesScore() {}
